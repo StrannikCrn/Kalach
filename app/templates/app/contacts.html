@@ -1,0 +1,54 @@
+{% extends 'app/mainTemplate.html' %}
+{% load staticfiles %}
+
+{% block head %}
+ <title>Контакты | НКО Калачеевские краеведы</title>
+ <link rel="stylesheet" href="{% static 'css/index.css'%}"/>
+ <link rel="stylesheet" href="{% static 'css/contacts.css'%}"/>
+{% endblock head %}
+
+{% block content %}
+    <article class="content">
+		<div class="oh">
+			<div class="bread" xmlns:v="http://rdf.data-vocabulary.org/#">
+				<span typeof="v:Breadcrumb"><a href="/" rel="v:url" property="v:title">Главная</a></span><img src="{% static 'images/template/arrow_white_28.png'  %}" alt="Разделитель" class="breadDivider"/>
+				<span id="lastCrumb">Контакты</span><img src="{% static 'images/template/arrow_purple_30.png'  %}" alt="Разделитель" class="breadEnd"/>
+			</div>
+		</div>
+		<div class="tac">
+			<img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1"
+                 class="vignette"/>
+			<h2 class="page_label mt60 mb30 fwb fs24 ib">Контакты</h2>
+			<img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка1"
+                 class="vignette"/>
+		</div>
+        <div class="firstBlock">
+            <form method="POST">
+            {% csrf_token %}
+                <input name="name" placeholder="Как к Вам обращаться?" type="text"/>
+                <input id="email" placeholder="Введите e-mail или телефон" name="email" type="text"/>
+                <textarea placeholder="Введите сообщение" name="text"></textarea>
+                <div class="tac"><button class="mt20 fwb theBtn" name="mess" type="submit">Отправить</button></div>
+            </form>
+        </div>
+        <div class="secondBlock">
+            <div class="textBlock">
+                <p class="hText">Мы работаем <b>Пн-Пт с 10-00 до 18-00</b></p>
+                <p class="hText">Наш адрес <b> 397600, Воронежская область, г.Калач, ул. 9 Января, д. 21</b></p>
+            </div>
+            <div class="textBlock">
+                <p class="hText">Контактный телефон:</p>
+                <p class="hText"><b>Елена Степановна Свиридова</b></p>
+				<p class="hText"><b>+7-968-563-00-71</b></p>
+
+            </div>
+            <div class="textBlock">
+                <p class="hText">Электронный адрес:</p>
+                <a href="zakaz@rusmaster48.ru" class="textBlock hText"><b>legendaaragona2013@yandex.ru</b></a>
+            </div>
+        </div>
+    </article>
+    <div class="mapY">
+       <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=gKdooSRuC_RjWdUK0s3X3DIEhwXaa8N-&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+	</div>
+{%  endblock content %}

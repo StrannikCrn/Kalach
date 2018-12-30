@@ -1,0 +1,83 @@
+{% extends 'app/services/template.html' %}
+{% load staticfiles %}
+
+{% block headInner %}
+    <title>Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы </title>
+    <meta name="description"
+          content=" Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы ">
+    <meta name="Keywords"
+          content="Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> 
+{% endblock headInner %}
+
+{% block contentInner %}
+    <article class="content">
+        <div class="oh">
+            <div class="bread" xmlns:v="http://rdf.data-vocabulary.org/#">
+                <span typeof="v:Breadcrumb"><a href="/" rel="v:url" property="v:title">Главная</a></span><img
+                    src="{% static 'images/template/arrow_white_28.png' %}" alt="Разделитель" class="breadDivider"/>
+                <span typeof="v:Breadcrumb"><p >Направления</p></span><img
+                    src="{% static 'images/template/arrow_white_28.png' %}" alt="Разделитель" class="breadDivider"/>
+                <span id="lastCrumb">Воскресенский храм</span><img src="{% static 'images/template/arrow_purple_30.png' %}"
+                                                       alt="Разделитель" class="breadEnd"/>
+            </div>
+        </div>
+        <div class="tac">
+            <img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1" class="vignette"/>
+            <h1 class="mt60 mb30 fwb fs24 ib">Воскресенский храм</h1>
+            <img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка2" class="vignette"/>
+        </div>
+        <div class="gallery_wrap">
+            <div class="fotorama" data-allowfullscreen="true"  data-nav="thumbs">
+                <img data-caption="1" src="{% static 'images/services/peshera/Boiko.jpg' %}"">
+                <img data-caption="1" src="{% static 'images/services/peshera/Boiko.jpg' %}"">
+                <img data-caption="1" src="{% static 'images/services/peshera/Boiko.jpg' %}"">
+                <img data-caption="1" src="{% static 'images/services/peshera/Boiko.jpg' %}"">
+            </div>
+        </div>
+        <div class="tac"><img class="content_img" alt="Кадачеевская пещера" src="{% static 'images/services/hram/Hram_1.jpg' %}"></div>
+
+
+        <nav id="pageNav" class="textBlock">
+            <a href="#anchor1" class="anchor anchor1">История Воскресенского храма</a>
+            <a href="#anchor2" class="anchor anchor2">Текущее состояние храма</a>
+        </nav>
+    </article>
+    <article class="content">
+        <div id="anchor1" class="lab2">
+            <h2 class="fwb fs24 ib">История Воскресенского храма</h2>
+        </div>
+        <div class="textBlock">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;История Воскресенского храма, расположенного в городе Калаче Воронежской области, одна из самых драматичных. Воскресенский храм, построенный в 1818 году, стоял на самом высоком месте, был самым большим по размерам, его настоятелем был благочинный. Северный придел Воскресенского храма освящён в честь святой мученицы Параскевы Пятницы. Эта святая была в то время очень популярной, отсюда – большое количество Пятницких храмов. Южный придел освящён в честь Покрова Пресвятой Богородицы.
+        </div>
+
+        <div class="textBlock">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В 1914 году, когда началась I мировая война, в Калач по железной дороге было эвакуировано имущество православных храмов из Польши. Всё оно оказалось в Воскресенском храме. Поэтому с приходом большевиков его отдали в распоряжение школы и начали громить первым. Звонарь Воскресенского храма, Николай Частнев, боясь расстрела, сам вызвался снимать колокола. Погром церкви был потрясающим: иконы расстреливали, срывали, выносили во двор и жгли. Некоторые ученики выхватывали осколки, прятали под одеждой и приносили домой, а матери голосили над поруганными святынями.
+        </div>
+        <div class="tac"><img class="content_img" alt="Кадачеевская пещера" src="{% static 'images/services/hram/Hram_2.jpg' %}"></div>
+        <div class="textBlock">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Директор школы №6 И.С. Ерёмченко помогал звонарю сбрасывать колокола. А они были лучшими в районе, их звон слышали за 15 вёрст. Самый большой колокол прицепили к трактору и тащили по булыжной дороге в сторону железнодорожной ветки. Он прыгал и стонал... Потом в течение нескольких лет в здании храма, где устроили учебные классы, уничтожали красивейшую роспись. Краски фресок-икон проступали, их забеливали, закрашивали, рубили топором... Под храмом вездесущие ученики обнаружили подземные коридоры. В классе, расположенном в главном алтаре, был люк, куда самые отчаянные ныряли, пока учитель писал на доске. Ходов было много, в нескольких направлениях, довольно длинных. Если дети стояли под дорогой, то было слышно, как наверху гремят телеги и грузовики.
+        </div>
+        <div class="tac"><img class="content_img" alt="Кадачеевская пещера" src="{% static 'images/services/peshera/adamov.jpg' %}"></div>
+        <div class="textBlock">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В 1965 году директор школы №6 Г.П. Сорокин решил положить конец этим путешествиям учеников. Он организовал засыпку храма внутри и снаружи – всего цокольного этажа. Но дети прокопали новые лазейки, уже возле стен храма и всё равно ходили по меловым коридорам, тем более, что они соединялись с Калачеевской пещерой. И только в середине 90-х все лазейки были прочно зацементированы. 
+        </div>
+        
+
+    </article>
+    <article class="content">
+        <div id="anchor2" class="lab2">
+            <h2 class="fwb fs24 ib">Текущее состояние пещеры</h2>
+        </div>
+        <div class="textBlock">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В 2017 году городское начальство задумало капитальный ремонт школы, ремонт здания храма и строительство рядом с храмом школьной пристройки со спортзалом, актовым залом и столовой, т.к. раньше всё это располагалось в церкви, причём пищу готовили в алтарях, и вода из мойки более 40 лет текла прямо в подземный коридор.
+        </div>
+        <div class="tac"><img class="content_img" alt="Кадачеевская пещера" src="{% static 'images/services/hram/Hram_3.jpg' %}"></div>
+                <div class="textBlock">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;НКО “Калачеевские краеведы” резко выступила против цементирования пола, но чиновники не поверили доводам общественников о существовании подземных ходов под Воскресенским храмом. В настоящее время организация взяла тайм-аут, чтобы, начиная с октября 2018 года, вновь поднять вопрос о сохранении духовного наследия предков и о полном возрождении уникального храма, вместе с его подземными коридорами.
+        </div>
+        <div class="tac"><img class="content_img" alt="Кадачеевская пещера" src="{% static 'images/services/hram/Hram_4.jpg' %}"></div>
+
+
+{% endblock contentInner %}

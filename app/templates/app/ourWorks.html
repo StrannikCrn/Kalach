@@ -1,0 +1,72 @@
+{% extends 'app/mainTemplate.html' %}
+{% load staticfiles %}
+
+{% block head %}
+ <title>Наши работы | Русский Мастер</title>
+ <link rel="stylesheet" href="{% static 'css/index.css'%}"/>
+ <link rel="stylesheet" href="{% static 'css/ourWorks.css'%}"/>
+  <script>
+    $(document).ready(function () {
+        $('.type').click(function(){
+            $.get( {url:"/getWorks",data:{'id':$(this).attr('id')},success: function(data) { $('#works').html(data); $('.workItemBtn').click(loadPh);letsDark(); } });
+		    var works = $('.activeWork');
+				for (var i=0; i < works.length; i++){
+                    var item = $(works[i]);
+                    item.removeClass('activeWork')
+                }
+            $(this).addClass('activeWork')   
+    });
+    })
+ </script>
+{% endblock head %}
+
+{% block content %}
+<article class="ourWorks content">
+		<div class="oh">
+			<div class="bread" xmlns:v="http://rdf.data-vocabulary.org/#">
+				<span typeof="v:Breadcrumb"><a href="/" rel="v:url" property="v:title">Главная</a></span><img src="{% static 'images/template/arrow_white_28.png'  %}" alt="Разделитель" class="breadDivider"/>
+				<span id="lastCrumb">Наши работы</span><img src="{% static 'images/template/arrow_purple_30.png'  %}" alt="Разделитель" class="breadEnd"/>
+			</div>
+		</div>
+		<div class="tac">
+			<img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1" class="vignette"/>
+			<h2 class="mt60 mb30 fwb fs24 ib">Наши работы</h2>
+			<img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка2" class="vignette"/>
+		</div>
+        <p class="textBlock">Мы любим то, что мы делаем и гордимся каждой своей выполненной работой. Мы выполняем заказы на совесть и только так, как сделали бы их для себя. </p>
+        <p class="textBlock">Вы можете ознакомиться с некоторыми нашими работами в галерее ниже. </p>
+        <p class="textBlock">Если у Вас остались какие-либо вопросы или Вы хотели бы что-нибудь спросить/уточнить или получить консультацию, которая всегда будет бесплатной и без навязывания услуг - звоните нам по указанным телефонам в рабочее время или оставьте заявку и мы с Вами сами свяжемся.</p>
+		<div class="oh subOurWorks" style="width: 110%;">
+			<div class="type activeWork" id="-1">Последние работы</div>
+            {%  for type in types %}
+                <div class="type" id="{{type.id}}">{{type.name}}</div>
+            {% endfor %}
+        </div>
+
+		<div id="works" class="oh cw">
+        {% for work in works %}
+        	<div class="col3 pr" style="height: 215px"><div class="workItem pa10 oh" style="background: url({{work.image}}) center no-repeat">
+				<div class="dark5 p10 pb15 td5">
+					<div class="tar workTitle td5">{{work.name}}</div>
+					<div class="td10 workDescription">
+						<div class="fs14 oh pv10" style="height: 70px;"><span class="fwb">Описание: </span>{{work.text}}</div>
+						<!-- <div class="fs14 oh fwb pb10 pt5"><div class="fl">Окончание проекта</div><div class="fr">{{work.date|date:"d.m.Y"}}</div></div> -->
+						<div   class="tac"><div   class="workItemBtn id{{work.id}}">Посмотреть</div></div>
+					</div>
+				</div>
+			</div></div>
+        {% endfor %}
+		</div>
+		<script>
+			var letsDark = function () {
+				var darks = $('.dark5');
+				for (var i=0; i < darks.length; i++){
+					var item = $(darks[i]);
+					item.css('height', item.find('.workTitle').height() + 'px');
+				};
+			}
+			letsDark();
+		</script>
+		<div class="tac"><div onclick="$('#Zayavka').fadeIn(200)" class="mt20 fwb theBtn">Оставить заявку</div></div>
+	</article>
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'app/mainTemplate.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <title>Новости | НКО Калачеевские краеведы</title>
+    <meta name="description"
+          content="Компания «Русский Мастер» выполнит ремонт фасадов по самой выгодной цене в Липецке. Применяем технологии как сухого, так и мокрого монтажа утеплителя и облицовочных материалов.">
+    <meta name="Keywords"
+          content="Ремонт фасадов Липецке,Ремонт фасадов в Липецке,Отделка Липецк,Ремонт фасадов,дома из сруба,беседки липецк,дома из сруба липецк, бани липецк, бани под ключ липецк, камины в липецке">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+{% endblock head %}
+{% block content %}
+    <article class="services content">
+        <div class="oh">
+            <div class="bread" xmlns:v="http://rdf.data-vocabulary.org/#">
+                <span typeof="v:Breadcrumb"><a href="/" rel="v:url" property="v:title">Главная</a></span><img
+                    src="{% static 'images/template/arrow_white_28.png' %}" alt="Разделитель" class="breadDivider"/>
+                <span typeof="v:Breadcrumb"><a href="/novosti-i-stati" rel="v:url" property="v:title">Новости</a></span><img
+                    src="{% static 'images/template/arrow_white_28.png' %}" alt="Разделитель" class="breadDivider"/>
+                <span id="lastCrumb">{{ res_news.name }}</span><img src="{% static 'images/template/arrow_purple_30.png' %}"
+                                                       alt="Разделитель" class="breadEnd"/>
+            </div>
+        </div>
+        <div class="tac">
+            <img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1"
+                 class="vignette"/>
+            <h2 class="page_label ">{{ res_news.name }}</h2>
+            <img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка1"
+                 class="vignette"/>
+        </div>
+
+        <div class="gallery_wrap">
+            {% if res_news.gallery_photos.all|length > 0 %}
+                <div class="fotorama" data-allowfullscreen="true" data-nav="thumbs">
+                    {% for photo in res_news.gallery_photos.all %}
+                        <img data-caption="{{ photo.caption }}" src="{{ photo.image.url }}">
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mt60">
+            {{ res_news.text|safe }}
+        </div>
+        <div id="anchor2" class="mt60 lab2">
+            <h2 class="fwb fs24 ib">Последние новости</h2>
+        </div>
+        <div class="news_list oh">
+            {% for news_item in bot_news %}
+                <a href="/novosti-i-stati/{{ news_item.url }}" class="news_item">
+                    <div class="oh">
+                        <h2 class="news_name">{{ news_item.name }}</h2>
+                        <p class="fr">24.05.2013</p>
+                    </div>
+                    <p class="news_text">{{ news_item.short_text|striptags }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </article>
+
+{% endblock content %}

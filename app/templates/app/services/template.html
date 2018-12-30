@@ -1,0 +1,22 @@
+{% extends 'app/mainTemplate.html' %}
+{% load staticfiles %}
+{% block head %}
+{% block headInner %}
+{% endblock headInner %}
+ <link rel="stylesheet" href="{% static 'css/index.css'%}"/>
+ <link rel="stylesheet" href="{% static 'css/serviceItem.css'%}"/>
+ <link rel="stylesheet" href="{% static 'css/contacts.css'%}"/>
+ 		<script>
+         $( document ).ready(function() {
+         $('.anchor').click(function(){
+         var classList = $(this).prop('className').split(' ')
+        
+         var top=$('#'+classList[1]).offset().top
+        jQuery('body,html').animate({scrollTop:top},800); 
+    })})
+		</script>
+{% endblock head %}
+{% block content %}
+{% block contentInner %}
+{% endblock contentInner %}
+{% endblock content %}

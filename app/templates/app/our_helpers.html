@@ -1,0 +1,84 @@
+{% extends 'app/services/template.html' %}
+{% load staticfiles %}
+
+{% block headInner %}
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+    <title>Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы </title>
+    <meta name="description"
+          content=" Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы ">
+    <meta name="Keywords"
+          content="Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы">
+{% endblock headInner %}
+
+{% block contentInner %}
+    <article class="content">
+
+            <div class="oh">
+            <div class="bread" xmlns:v="http://rdf.data-vocabulary.org/#">
+                <span typeof="v:Breadcrumb"><a href="/" rel="v:url" property="v:title">Главная</a></span><img src="/static/images/template/arrow_white_28.png" alt="Разделитель" class="breadDivider">
+                <span id="lastCrumb">Документы</span><img src="/static/images/template/arrow_purple_30.png" alt="Разделитель" class="breadEnd">
+            </div>
+        </div>
+
+        </div>
+        <div class="tac">
+            <img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1" class="vignette"/>
+            <h1 class="mt60 mb30 fwb fs24 ib">Документы</h1>
+            <img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка2" class="vignette"/>
+        </div>
+                  
+    </article>
+
+
+    <article class="content">
+        <div id="anchor1" class="lab2">
+            <h2 class="fwb fs24 ib">Нормативные документы</h2>
+        </div>
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/st.44.Konstitucia_RF.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Статья 44 конституции Российской Федерации</a>
+        </div> 
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/ustav.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Устав КМО КПО Калачеевские краеведы</a>
+        </div>
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/FZ7_vipiska_NKO.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Выписка из Федерального закона от 12.01.1996 №7-ФЗ</a>
+        </div>
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/FZ82_vipiska.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Выписка из Федерального закона от 19.05.1995 N 82-ФЗ</a>
+        </div>
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/zakonVO_46.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Закон Воронежской Области от 05 мая 2015 года N 46-ОЗ</a>
+        </div>                        
+             
+    </article>
+
+    <article class="content">
+        <div id="anchor2" class="lab2">
+            <h2 class="fwb fs24 ib">Публикации о НКО "Калачеевские краеведы"</h2>
+        </div>
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/Booklet_zorie.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Статья в газете "Калачеевские зори" о нас</a>
+        </div>
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/Booklet_heroes.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Буклет о героях города Калач</a>
+        </div>          
+
+        <div class="textBlockLines pt10">
+             <a href="/static/images/docs/Booklet_tainiObiteli.pdf" target="_blank"><img src="/static/images/docs/pdf.png">Буклет о пещере города Калач</a>
+        </div> 
+     
+    </article>
+
+    
+
+
+
+{% endblock contentInner %}

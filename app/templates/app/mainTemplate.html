@@ -1,0 +1,229 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/template.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'scripts/slider.min.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    {% block head %}
+    {% endblock %}
+    <script>
+        $(function () {
+            $('#slider').rbtSlider({
+                height: '650px',
+                'dots': true,
+                'arrows': true,
+                'auto': 3
+            });
+        });
+    </script>
+</head>
+<body>
+<div style="cursor:pointer" id="upArrow"><span>Вверх</span></div>
+<script>
+    var photos;
+    var num = 0;
+    function loadPh() {
+        $('#FullsizeImg ').attr('src', "Static/images/template/loading.gif");
+        $('#FullsizeImgForm').fadeIn(200);
+        var classList = $(this).prop('className').split(' ')
+        $.get({
+            url: "/getPhotos/", data: {'id': classList[1]}, success: function (data) {
+                var ph = data.split('$')
+                photos = []
+                num = 0
+                for (var i = 0; i < ph.length; i++) {
+                    if (ph[i] != "") photos.push("/" + ph[i])
+                }
+                $('#FullsizeImg ').attr('src', photos[0]);
+            }
+        });
+    }
+    $(document).ready(function () {
+        $('.workItemBtn').click(loadPh)
+        $('#LeftArrImg').click(function () {
+            $('#FullsizeImg ').attr('src', "Static/images/template/loading.gif");
+            num--;
+            if (num < 0)
+                num = photos.length - 1;
+            $('#FullsizeImg ').attr('src', photos[num]);
+        })
+        $('#RightArrImg').click(function () {
+            $('#FullsizeImg ').attr('src', "Static/images/template/loading.gif");
+            num++;
+            if (num >= photos.length)
+                num = 0;
+            $('#FullsizeImg ').attr('src', photos[num]);
+        })
+        $('#upArrow').click(function () {
+            jQuery('body,html').animate({scrollTop: 0}, 800);
+        })
+    })
+
+
+    var prev = 0;
+    var upArrow_onScroll = function () {
+        if (scrollY > 600) {
+            if (prev <= 600) $('#upArrow').css('transform', 'none');
+        }
+        else {
+            if (prev > 600) $('#upArrow').css('transform', 'scale(0)');
+        }
+        prev = scrollY;
+    };
+    $(window).scroll(upArrow_onScroll);
+</script>
+<header id="headerAnchor" class="header">
+    <div class="headerContent">
+        <div class="hLogoBlock">
+            <!-- <img alt="Логотип" src="https://rusmaster.netlify.com/images/template/logo.png"/> -->
+            <a href="/">
+                <img alt="Логотип" src="{% static 'images/template/logo.png' %}"/>
+            </a>
+        </div>
+        <div class="hBlock">
+            <p class="hContactTitle pb20"><b>Воронежская область, г. Калач</b></p>
+            <p class="fs13 pb5">Пн-Пт с 10-00 до 18-00</p>
+            <p class="pb5 fs14"><b>+7-968-563-00-71</b></p>
+        </div>
+    </div>
+    <div class="hRefs">
+        <div class="hRefsContent pr">
+            <a href="/o-nas">
+                <div class="hRefButton">О нас</div>
+            </a>
+            <a href="/novosti-i-stati">
+                <div class="hRefButton">Новости</div>
+            </a>
+            <div class="hRefButton">
+                <p>Направления</p>
+                <div class="sub_menu">
+                    <a href="/napravleniya/gorod">
+                        <div class="hRefButton">Благоустройство города</div>
+                    </a>
+                    <a href="/napravleniya/peshera">
+                        <div class="hRefButton">Калачеевская пещера</div>
+                    </a>
+                    <a href="/napravleniya/hram">
+                        <div class="hRefButton">Воскресенский храм</div>
+                    </a>
+                </div>
+            </div>
+            <a href="/kto-nam-pomogaet">
+                <div class="hRefButton">Публикация документов</div>
+            </a>
+            <a href="/contacts">
+                <div class="hRefButton">Контакты</div>
+            </a>
+            <div id="callMebtn" onclick="$('#CallMe').fadeIn(200)" class="theBtn ma exc_btn">ЭКСКУРСИИ</div>
+        </div>
+    </div>
+    {% if isIndex %}
+        <div class="slider" id="slider">
+            <div class="slItems">
+                <div class="slItem hBigText" style="background-image: url('/static/images/index/cave.jpg');">
+                    <h1>Самая большая по протяжённости <br> пещера в Европе</h1>
+                    <a href="/ourWorks" class="hBigTextButton">ЭКСКУРСИЯ</a>
+                </div>
+                <div class="slItem hBigText" style="background-image: url('/static/images/index/cave.jpg');">
+                    <h1>Самая большая по протяжённости <br> пещера в Европе</h1>
+                    <a href="/ourWorks" class="hBigTextButton">ЭКСКУРСИЯ</a>
+                </div>
+                <div class="slItem hBigText" style="background-image: url('/static/images/index/cave.jpg');">
+                    <h1>Самая большая по протяжённости <br> пещера в Европе</h1>
+                    <a href="/ourWorks" class="hBigTextButton">ЭКСКУРСИЯ</a>
+                </div>
+            </div>
+        </div>
+
+
+    {% endif %}
+</header>
+<div class="mainContent">
+    {% block content %}
+    {% endblock %}
+</div>
+<footer class="cw">
+    <div class="content mb0 ">
+        <div class="oh">
+            <div class="col3">
+                <!-- <img class="mt60 mb40" alt="Логотип" src="https://rusmaster.netlify.com/images/template/logo.png"/> -->
+                <a href="/">
+                    <img class="mt60 mb40" alt="Логотип" src="{% static 'images/template/logo2.png' %}"/>
+                </a>
+            </div>
+            <div class="col3">
+                <p class="mt60 mb40"><b>НОВОСТИ</b></p>
+                {% for news_item in footer_news %}
+                    <a class="db fs14 pb5 htdu" href="/novosti-i-stati/{{ news_item.url }}">{{ news_item.name }}</a>
+                {% endfor %}
+            </div>
+
+            <div class="col3">
+                <p class="mt60 mb40"><b>КОНТАКТЫ</b></p>
+                <p style="clear:both;" class="fwb">Мы находимся</p>
+                <div class="pv20">397600, Воронежская область, г.Калач, <br>ул. 9 Января, д. 21</div>
+                <p><b>Свяжитесь с нами</b></p>
+                <div class="pv20">
+                    <p class="">Пн-Пт с 10-00 до 20-00</p>
+                    <p class=""><b>+7-968-563-00-71</b></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="fs12 oh mt60 pb20">
+            <p class="col2">2018-2019 Все права защищены</p>
+            <div class="col2 tar mNoAlign">
+                <span class="pr5">Разработка и продвижение - </span><a class="tdu" target="_blank"
+                                                                       href="https://Blackraven.pro"> Blackraven</a>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+<!-- FORMS -->
+<div id="FullsizeImgForm" class="darkBox" onclick="$('#FullsizeImgForm').fadeOut(200)">
+    <img onclick="event.stopPropagation()" class="pavc pal20 cp" id="LeftArrImg" style="z-index: 100;max-width: 50px;"
+         src="{% static '/images/template/leftArr.png' %}" alt="Фотография"/>
+    <img id="FullsizeImg" src="" alt="Фотография" onclick="$('#FullsizeImgForm').fadeOut(200)" class="pa0 ma"
+         style="border: 3px solid white; max-width: 90%; max-height: 90%;"/>
+    <img onclick="event.stopPropagation()" class="pavc par20 cp" id="RightArrImg" style="max-width: 50px"
+         src="{% static '/images/template/rightArr.png' %}" alt="Фотография"/>
+</div>
+<div id="CallMe" class="darkBox" onclick="$('#CallMe').fadeOut(200)">
+    <div class="formTemplate cw form" onclick="event.stopPropagation()">
+        <h2 class="title">Оставьте свои контактные данные и мы перезвоним</h2>
+        <div class="closeButton" onclick="$('#CallMe').fadeOut(200)"></div>
+        <form method="POST" class="post-form ">{% csrf_token %}
+            <input required placeholder="Имя" name="name" type="text"/>
+            <input required placeholder="Телефон" name="cellphone" type="text"/>
+            <div class="tac">
+                <button type="submit" name="ItsCallMe" class="theBtn">Перезвоните мне</button>
+            </div>
+        </form>
+        <h4 class="subtitle">Заполните форму сейчас и мы свяжемся с Вами в течение часа</h4>
+    </div>
+</div>
+<div id="Zayavka" class="darkBox" onclick="$('#Zayavka').fadeOut(200)">
+    <div class="formTemplate cw form" onclick="event.stopPropagation()">
+        <h2 class="title">Оставьте свои контактные данные и мы перезвоним</h2>
+        <div class="closeButton" onclick="$('#Zayavka').fadeOut(200)"></div>
+        <form method="POST" class="post-form ">{% csrf_token %}
+            <input required placeholder="Имя" name="name" type="text"/>
+            <input required placeholder="Телефон" name="cellphone" type="text"/>
+            <input required placeholder="E-mail" name="mail" type="email"/>
+            <textarea required placeholder="Введите Ваш вопрос" name="description"></textarea>
+            <div class="tac">
+                <button type="submit" name="Zayavka" class="theBtn">Отправить</button>
+            </div>
+        </form>
+        <h4 class="subtitle">Заполните форму сейчас и мы свяжемся с Вами в течение часа</h4>
+    </div>
+</div>
+</body>

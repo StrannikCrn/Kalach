@@ -1,0 +1,18 @@
+.firstBlock{float: left;width:41.1%;overflow: hidden;}
+.firstBlock textarea{width: 392px;height: 100px;resize: none;padding:0}
+.secondBlock{float: right;width: 41%;text-align: center;}
+#email{float:right;}
+.firstBlock input{width: 190px; margin-bottom:20px}
+.firstBlock input:focus { outline: none; border: 2px solid #684c6a; }
+.firstBlock textarea:focus  { outline: none; border: 1px solid #684c6a; }
+.firstBlock button{float:right}
+.mapY{height:450px;margin-top: 40px; margin-bottom: -50px; }
+
+/* MOBILE */
+@media screen and (max-device-width: 950px) and (orientation: portrait){
+.firstBlock {float:none;width:auto}
+.firstBlock input{width: 99%;}
+.firstBlock textarea {width: 99%;}
+form{text-align:left}
+.secondBlock {float: none; width: auto;}
+}

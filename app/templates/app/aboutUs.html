@@ -1,0 +1,127 @@
+{% extends 'app/services/template.html' %}
+{% load staticfiles %}
+
+{% block headInner %}
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+    <title>Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы </title>
+    <meta name="description"
+          content=" Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы ">
+    <meta name="Keywords"
+          content="Калачеевская пещера, воскресенский храм, город Калач | НКО Калачеевские краеведы">
+{% endblock headInner %}
+
+{% block contentInner %}
+    <article class="content">
+
+            <div class="oh">
+			<div class="bread" xmlns:v="http://rdf.data-vocabulary.org/#">
+				<span typeof="v:Breadcrumb"><a href="/" rel="v:url" property="v:title">Главная</a></span><img src="/static/images/template/arrow_white_28.png" alt="Разделитель" class="breadDivider">
+				<span id="lastCrumb">О нас</span><img src="/static/images/template/arrow_purple_30.png" alt="Разделитель" class="breadEnd">
+			</div>
+		</div>
+
+        </div>
+        <div class="tac">
+            <img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1" class="vignette"/>
+            <h1 class="mt60 mb30 fwb fs24 ib">О нас</h1>
+            <img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка2" class="vignette"/>
+        </div>
+        <div class="gallery_wrap">
+            <div class="fotorama" data-nav="thumbs" data-allowfullscreen="true">
+                <img src="{% static 'images/services/about_us/aboutus_1.jpg' %}" data-caption="Краеведы и Ю.Котляров у памятника генералу Маргелову">
+                <img src="{% static 'images/services/about_us/aboutus_2.jpg' %}" data-caption="Ведущая Елена Свиридова на Дне ВДВ">
+                <img src="{% static 'images/services/about_us/aboutus_3.jpg' %}" data-caption="Грамоты краеведам от десантников">
+                <img src="{% static 'images/services/about_us/aboutus_4.jpg' %}" data-caption="Ирина Азарова и группа Лучики">
+                <img src="{% static 'images/services/about_us/aboutus_5.jpg' %}" data-caption="Идею Адамова сделать баннер поддержали другие десантники">
+                <img src="{% static 'images/services/about_us/aboutus_6.jpg' %}" data-caption="Калачеевские десантники установили баннер возле памятника Маргелову">
+                <img src="{% static 'images/services/about_us/aboutus_7.jpg' %}" data-caption="Краеведы организовали ночь музеев в Мае 2018 г.">
+                <img src="{% static 'images/services/about_us/aboutus_8.jpg' %}" data-caption="Ночь музеев">
+                <img src="{% static 'images/services/about_us/aboutus_9.jpg' %}" data-caption="Ночь музеев - дети в пещере">                                                                                                
+            </div>
+        </div>
+          
+    </article>
+
+
+    <article class="content">
+        <div id="anchor1" class="lab2">
+            <h2 class="fwb fs24 ib">НКО "Калачеевские краеведы"</h2>
+        </div>
+
+        <div class="textBlock10 pt10">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;НКО – если кто-то не знает, некоммерческая организация. Мы зарегистрировали её через Минюст в феврале 2018-го. Полное название – Калачееская местная общественная культурно-просветительская организация «Калачеевские краеведы». Действует на основании Устава организации. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Председатель Совета – Свиридова Елена Степановна (территориально нахожусь в Москве, но душой и мыслями – в Калаче), мой заместитель – Адамов Игорь Николаевич (территориально находится в Калаче). Членов организации достаточно для успешной работы НКО.
+        </div>
+
+        <div class="textBlock10 pt10">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Главная цель КМО КПО «Калачеевские краеведы» </b> – содействие органам государственной власти и органам местного самоуправления в сохранении, использовании и популяризации объектов культурного наследия на территории города и района. Важно, конечно, чтобы органы захотели этого содействия. 
+        </div>
+
+        <div class="textBlock10 pt10">
+        	<b>Вот ещё несколько дополнительных целей:</b>
+
+        	<ul class="ulMove20">
+        		<li>содействие духовному развитию личности, распространению и защите гуманистических ценностей;</li>
+        		<li>организация и осуществление просветительской деятельности;</li>
+        		<li>организация и проведение работы по гражданско-патриотическому воспитанию, интеллектуальному и нравственно-духовному развитию детей и молодёжи;</li>
+        		<li>развитие и укрепление межнациональных отношений;</li>
+        		<li>разработка и проведение паломнических маршрутов по территории города Калача и Калачеевского района.</li>
+        	</ul>
+        </div> 
+
+        <div class="textBlock">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Отрадно сознавать, что начинаются работы по возрождению
+            монастыря. Члены некоммерческой общественной организации «Калачеевские краеведы» столько раз поднимали
+            вопрос о восстановлении пещеры, что на этот раз городская администрация сработала – городу выделил средства
+            Минстрой.
+        </div>
+      
+    </article>
+
+    <article class="content">
+        <div id="anchor2" class="lab2">
+            <h2 class="fwb fs24 ib">Что уже сделано</h2>
+        </div>
+
+        <div class="textBlock10 pt10">
+        	<b>За полгода КМО КПО «Калачеевские краеведы» осуществила следующее:</b>
+
+        	<ul class="ulMove20">
+        		<li>написана и издана брошюра «Уникальный храм земли Калачеевской» о Воскресенском храме;</li>
+        		<li>разработан буклет «Тайны подземной обители» о Калачеевской культовой пещере;</li>
+        		<li>разработан буклет «Герои-калачеевцы» о 17-ти Героях Советского Союза, жителей Калачеевского района;</li>
+        		<li>произведена чистка старого сада на территории Калачеевской культовой пещеры;</li>
+        		<li>установлен баннер, посвящённый десантникам Калачеевского района;</li>
+        		<li>во всероссийскую газету «Десантники России» помещён материал о десантниках Калачеевского района во главе с их руководителем Юрием Котляровым;</li>
+        		<li>2 августа 2018 г. десантникам Калачеевского района оказана помощь в проведении праздника у памятника генералу армии В.Ф. Маргелову;</li>
+        		<li>написана песня, посвящённая воздушно-десантным войскам;</li>
+        		<li>установлен баннер «Успех города Калача – в правильном выборе пути развития».</li>
+
+        	</ul>
+        </div>      
+    </article>
+
+    <article class="content">
+        <div id="anchor3" class="lab2">
+            <h2 class="fwb fs24 ib">Калач должен стать туристско-паломническим центром юга Воронежской области</h2>
+        </div>
+        <div class="textBlock10">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если совместно с администрацией города, администрацией района, администрацией школы №6 мы сможем это сделать (не сразу, конечно, а шаг за шагом), представляете, как расцветёт Калач! 
+
+        </div>
+
+        <div class="textBlock10">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Тысячи туристов и паломников со всей России будут приезжать в наш любимый город. Разве останется в стороне областная администрация? Или Центральный Федеральный Округ (тем более что там теперь работает А.В. Гордеев)? Нет, конечно. Помогут отремонтировать больницу, наладят работу предприятий, запустят туриндустрию, появятся рабочие места, молодёжь перестанет сбегать в Воронеж, жить в Калаче станет престижно… <b>Мечты? «Мечты сбываются», – говорит Газпром. Мы и без Газпрома это знаем.</b>
+        </div>
+       	
+        <div class="textBlock10">
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если все вместе, без «жабы», которая обычно душит калачеевцев, без боязни («я сделаю, но как бы чего не вышло»), не вставляя друг другу палки в колёса, то сказку всегда можно сделать былью.
+        </div>
+        	
+        <div class="textBlock10 textcenter">
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Мы идём, мы не боимся, давайте за нами!</b>
+        </div>
+
+     </article>
+
+{% endblock contentInner %}

@@ -1,0 +1,84 @@
+{% extends 'app/mainTemplate.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <title>Экскурсии по калачеевской пещере, обустройства города Калач, Воскресенский храм  | НКО Калачеевсике краеведы</title>
+    <meta name="description"
+          content="НКО Калачеевские краеведы осуществляет деятельность по поддержанию культурного наследия, а именно восстановления Калачеевской пещеры, Воскресенского храма, обустройства города Калач">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock head %}
+
+{% block content %}
+    <article class="services content">
+        <div class="tac">
+            <img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1"
+                 class="vignette"/>
+            <h2 class="page_label">ОСНОВНЫЕ НАПРАВЛЕНИЯ</h2>
+            <img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка1"
+                 class="vignette"/>
+        </div>
+        <div class="fwb m-services oh">
+            <!-- <a href="/uslugi/fasad" class="col2 row1 pr"><div class="pa10 cp zoom oh" style="background: #eee;"><div class="pal20 pat20 td5 zoom1">УТЕПЛЕНИЕ ФАСАДОВ</div><img src="https://rusmaster.netlify.com/images/index/4.1_remont_fasadov.png" alt="Утепление фасадов" class="pab20 pal0 par0 ma zoom1 td5"/></div></a> -->
+            <a href="/napravleniya/gorod" class="col2">
+                <div class="usl_item" style="background-image: url({% static 'images/index/kalach.jpg' %})"><p>
+                    БЛАГОУСТРОЙСТВО РОДНОГО ГОРОДА</p></div>
+            </a>
+            <a href="/napravleniya/peshera" class="col4">
+                <div class="usl_item" style="background-image: url({% static 'images/index/cave1.jpg' %})"><p>
+                    КАЛАЧЕЕВСКАЯ ПЕЩЕРА</p></div>
+            </a>
+            <a href="/napravleniya/hram" class="col4">
+                <div class="usl_item" style="background-image: url({% static 'images/index/hr.jpg' %})"><p>ВОСКРЕСЕНСКИЙ
+                    ХРАМ</p></div>
+            </a>
+        </div>
+
+        <div class="index_text">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Некоммерческая организация (НКО) “Калачеевские краеведы” занимается сохранением и восстановлением наследия русской культуры. На данный момент силы организации сосредоточены на трёх основных направлениях: созданием плана обустройства города Калач, проведением работ по восстановлению калачеевской пещеры, реконструкции Воскресенского храма.
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В команде НКО “Калачеевские краеведы” только преданные своему народу энтузиасты. На данный момент мы не обладаем государственной поддержкой нашей деятельности.
+    Наша организация также организовывает интересные экскурсии по достопримечательностям Калача и его окресностей.
+            </p>
+
+        </div>
+    </article>
+
+    <article class="ourWorks content">
+        <div class="tac">
+            <img src="{% static 'images/template/vignette_left.png' %}" alt="виньетка1"
+                 class="vignette"/>
+            <h2 class="page_label">НАШИ НОВОСТИ</h2>
+            <img src="{% static 'images/template/vignette_right.png' %}" alt="виньетка2"
+                 class="vignette"/>
+        </div>
+        <div class="news_list oh">
+            {% for news_item in some_news %}
+                <a href="/novosti-i-stati/{{ news_item.url }}" class="news_item">
+                    <div class="oh">
+                        <h2 class="news_name">{{ news_item.name }}</h2>
+                        <p class="fr">{{ news_item.date|date:"d.m.Y" }}</p>
+                    </div>
+                    <p class="news_text">{{ news_item.short_text|striptags|truncatewords:20 }} </p>
+                </a>
+            {% endfor %}
+
+            <a class="all_news" href="/news">Читать все новости</a>
+        </div>
+        <div class="partners">
+            <a href="https://www.govvrn.ru/" target="_blank">
+                <img alt="" src="{% static 'images/index/partner1.png' %}"/>
+            </a>
+            <a href="http://sdrvdv.ru/" target="_blank">
+                <img alt="" src="{% static 'images/index/partner2.png' %}"/>
+            </a>
+            <a href="http://vkalach.ru/" target="_blank">
+                <img alt="" src="{% static 'images/index/partner3.png' %}"/>
+            </a>
+            <a href="https://www.govvrn.ru/" target="_blank">
+                <img alt="" src="{% static 'images/index/partner1.png' %}"/>
+            </a>
+        </div>
+    </article>
+
+{% endblock content %}
