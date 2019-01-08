@@ -12,7 +12,7 @@ h1 {
 .gallery_wrap{
     width: 700px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .page_label{
     margin-top: 60px;
@@ -21,6 +21,22 @@ h1 {
     display: inline-block;
     color: #6A92AB;
 }
+
+/*--------BY SERGEI---------------*/
+.img_comment {
+ align-content: center;
+ padding: 5px;
+ margin: 10px 0 5px 5px;   
+}
+
+.img_comment figcaption {
+    margin: 0 auto 10px;
+}
+
+
+
+/*--------END BY SERGEI---------------*/
+
 /*========== COMMON ===========*/
 .theBtn_cont{color: white;background-color:#6A92AB;transition-duration: 0.3s;border: 2px solid white;display: inline-block;cursor: pointer;padding: 10px}
 .theBtn_cont:hover{color: black;background-color: white;border: 2px solid #6A92AB}
