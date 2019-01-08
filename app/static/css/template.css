@@ -9,6 +9,12 @@ h1 {
     font-size: 26px;
     color: #5393AE;
 }
+
+h2 {
+    margin-top: 40px;
+}
+
+
 .gallery_wrap{
     width: 700px;
     margin: 0 auto;
@@ -196,14 +202,29 @@ button{border: 0; background: none; box-shadow:none; border-radius: 0px; }
 	display: none;
 }
 .formTemplate { width: 520px; background: white; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); }
-.formTemplate .title { background: #684c6a; color: white; padding: 20px 50px 30px 50px; text-align: center; font-size: 18px; }
+.formTemplate .title { margin-top: 0px; background: #5393AE; color: white; padding: 20px 50px 30px 50px; text-align: center; font-size: 18px; }
 .formTemplate form { padding: 40px 50px 0 50px; }
 .formTemplate input { height: 10px; }
 .formTemplate textarea { height: 150px; }
-.formTemplate input, .formTemplate textarea { width: 400px; margin-bottom: 20px; border: 1px solid #684c6a; padding: 10px; }
-.formTemplate input:focus, .formTemplate textarea:focus { border: 2px solid #684c6a; outline: none; }
+.formTemplate input, .formTemplate textarea { width: 400px; margin-bottom: 20px; border: 1px solid #5393AE; padding: 10px; }
+.formTemplate input:focus, .formTemplate textarea:focus { border: 2px solid #5393AE; outline: none; }
 .closeButton { position: absolute; top: -8px; right: -8px; height: 16px; width: 16px; background: url(../images/template/form_close.png) no-repeat; }
 .formTemplate .theBtn { margin: 20px 0; }
+.formTemplate .theBtn {
+    border: 2px solid #5393AE;
+    color: #5393AE;
+    height: 50px;
+    width: 220px;
+    text-align: center;
+    line-height: 45px;
+    display: inline-block;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+.formTemplate .theBtn:hover { background: white;
+    color: #000; }
+
+
 .formTemplate .theBtn:focus { outline: none; }
 .formTemplate .subtitle { padding: 10px 0 20px 0; text-align: center; color: #ccc; font-size: 14px; }
 
@@ -364,3 +385,6 @@ a { color: inherit; text-decoration: none; }
 .social{display:inline-block;float:left;margin-right:1%}
 .foterLabel{clear:both;font-weight:700;margin-bottom:10px}
 
+.ulMove20 {
+    padding-left: 20px;
+}

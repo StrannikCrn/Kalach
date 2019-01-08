@@ -126,17 +126,17 @@
     {% if isIndex %}
         <div class="slider" id="slider">
             <div class="slItems">
-                <div class="slItem hBigText" style="background-image: url('/static/images/index/cave.jpg');">
-                    <h1>Самая большая по протяжённости <br> пещера в Европе</h1>
-                    <a href="/ourWorks" class="hBigTextButton">ЭКСКУРСИЯ</a>
+                <div class="slItem hBigText" style="background-image: url('/static/images/index/peshera_new2.jpg');">
+                    <h1>Одна из наиболее протяжённых <br>пещер в России</h1>
+                    <a href="napravleniya/peshera" class="hBigTextButton">ЭКСКУРСИЯ</a>
                 </div>
-                <div class="slItem hBigText" style="background-image: url('/static/images/index/cave.jpg');">
-                    <h1>Самая большая по протяжённости <br> пещера в Европе</h1>
-                    <a href="/ourWorks" class="hBigTextButton">ЭКСКУРСИЯ</a>
+                <div class="slItem hBigText" style="background-image: url('/static/images/index/hram.jpg');">
+                    <h1>Воскресенский храм <br> построен в 1818 году</h1>
+                    <a href="napravleniya/hram" class="hBigTextButton">ПОДРОБНЕЕ</a>
                 </div>
-                <div class="slItem hBigText" style="background-image: url('/static/images/index/cave.jpg');">
-                    <h1>Самая большая по протяжённости <br> пещера в Европе</h1>
-                    <a href="/ourWorks" class="hBigTextButton">ЭКСКУРСИЯ</a>
+                <div class="slItem hBigText" style="background-image: url('/static/images/index/kalach.jpg');">
+                    <h1>Город Калач<br> основан в 1716 году</h1>
+                    <a href="napravleniya/gorod" class="hBigTextButton">ПОДРОБНЕЕ</a>
                 </div>
             </div>
         </div>
@@ -198,16 +198,17 @@
 </div>
 <div id="CallMe" class="darkBox" onclick="$('#CallMe').fadeOut(200)">
     <div class="formTemplate cw form" onclick="event.stopPropagation()">
-        <h2 class="title">Оставьте свои контактные данные и мы перезвоним</h2>
+        <h2 class="title">Оставьте заявку на экскурсию</h2>
         <div class="closeButton" onclick="$('#CallMe').fadeOut(200)"></div>
         <form method="POST" class="post-form ">{% csrf_token %}
-            <input required placeholder="Имя" name="name" type="text"/>
+            <input required placeholder="Как к Вам обращаться" name="name" type="text"/>
             <input required placeholder="Телефон" name="cellphone" type="text"/>
+            <textarea required placeholder="Укажите кол-во человек и желаемую дату" name="description"></textarea>
             <div class="tac">
-                <button type="submit" name="ItsCallMe" class="theBtn">Перезвоните мне</button>
+                <button type="submit" name="ItsCallMe" class="theBtn">Отправить заявку</button>
             </div>
         </form>
-        <h4 class="subtitle">Заполните форму сейчас и мы свяжемся с Вами в течение часа</h4>
+        <h4 class="subtitle">Заполните форму сейчас и мы свяжемся с Вами</h4>
     </div>
 </div>
 <div id="Zayavka" class="darkBox" onclick="$('#Zayavka').fadeOut(200)">

@@ -16,3 +16,7 @@
 form{text-align:left}
 .secondBlock {float: none; width: auto;}
 }
+
+footer {
+	margin-top: 0px;
+}
