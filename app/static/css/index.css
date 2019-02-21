@@ -60,6 +60,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .partners a{
     padding: 25px;
     display: flex;
@@ -70,6 +71,7 @@
 .partners img {
     filter: grayscale(100%);
     transition: all 0.5s;
+    max-width: 300px;
 }
 
 .partners img:hover {

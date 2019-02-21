@@ -178,7 +178,7 @@ button{border: 0; background: none; box-shadow:none; border-radius: 0px; }
 .breadEnd {position: absolute;right:-11px;top: -1px;height: 29px; }
 
 .theBtn {
-    border: 2px solid white;
+    border: 1px solid white;
 	color: white;
 	height: 50px;
 	width: 220px;
@@ -187,9 +187,26 @@ button{border: 0; background: none; box-shadow:none; border-radius: 0px; }
 	display: inline-block;
 	transition-duration: 0.5s;
 	cursor: pointer;
+    transition-duration: 0,3s;
 }
-.theBtn:hover { background: white;
-    color: #000; }
+.theBtn:hover { background: #538092;
+    color: white; }
+
+.theBtn2 {
+    border: 1px solid #5393ae;
+    color: #5393ae;
+    height: 50px;
+    width: 220px;
+    text-align: center;
+    line-height: 45px;
+    display: inline-block;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    transition-duration: 0,3s;
+}
+
+.theBtn2:hover { background: #538092;
+    color: white; }
 
 .darkBox{
 	position: fixed;

@@ -25,11 +25,11 @@ SECRET_KEY = '-slhv50=+7(tt@+p4zag9($dtgxom8)q9k%*c(u(_a87$^3q-%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kalach.blackraven.pro','127.0.0.1']
+ALLOWED_HOSTS = ['kalachkrai.ru','127.0.0.1']
 EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.yandex.ru"
-EMAIL_HOST_USER = 'site@rusmaster48.ru'
-EMAIL_HOST_PASSWORD = 'srusmaster'
+EMAIL_HOST = "smtp.mail.ru"
+EMAIL_HOST_USER = 'robot@blackraven.pro'
+EMAIL_HOST_PASSWORD = 'ravenbotwashere'
 EMAIL_PORT = 587
 
 # Application definition

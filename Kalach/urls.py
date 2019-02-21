@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^kto-nam-pomogaet', our_helpers),
     url(r'^contacts$', contacts),
     url(r'^napravleniya/peshera', peshera),
+    url(r'^checkRequest', checkRequest),
     url(r'^napravleniya/hram', hram),
     url(r'^napravleniya/gorod', gorod),
     url(r'^admin/', admin.site.urls),

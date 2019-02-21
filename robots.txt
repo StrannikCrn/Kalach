@@ -1,5 +1,3 @@
 User-agent:*
-Disallow: /static/images/services/fasad/sukh.jpg
 Disallow: /admin
-Disallow: /aboutUs
-Host: https://Rusmaster48.ru
+

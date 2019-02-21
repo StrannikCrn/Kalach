@@ -1,4 +1,4 @@
-{% load staticfiles %}
+﻿{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -86,11 +86,13 @@
                 <img alt="Логотип" src="{% static 'images/template/logo.png' %}"/>
             </a>
         </div>
+
         <div class="hBlock">
             <p class="hContactTitle pb20"><b>Воронежская область, г. Калач</b></p>
             <p class="fs13 pb5">Пн-Пт с 10-00 до 18-00</p>
             <p class="pb5 fs14"><b>+7-968-563-00-71</b></p>
         </div>
+
     </div>
     <div class="hRefs">
         <div class="hRefsContent pr">
@@ -176,11 +178,12 @@
                 </div>
             </div>
         </div>
+        <div class="fs12 oh">
+            <p class="col2">Сайт создан с использованием гранта Президента Российской Федерации на развитие гражданского общества, предоставленного Фондом президентских грантов</p>
+        </div>
         <div class="fs12 oh mt60 pb20">
             <p class="col2">2018-2019 Все права защищены</p>
             <div class="col2 tar mNoAlign">
-                <span class="pr5">Разработка и продвижение - </span><a class="tdu" target="_blank"
-                                                                       href="https://Blackraven.pro"> Blackraven</a>
             </div>
         </div>
     </div>
@@ -200,7 +203,7 @@
     <div class="formTemplate cw form" onclick="event.stopPropagation()">
         <h2 class="title">Оставьте заявку на экскурсию</h2>
         <div class="closeButton" onclick="$('#CallMe').fadeOut(200)"></div>
-        <form method="POST" class="post-form ">{% csrf_token %}
+        <form method="POST" action="/checkRequest" class="post-form ">{% csrf_token %}
             <input required placeholder="Как к Вам обращаться" name="name" type="text"/>
             <input required placeholder="Телефон" name="cellphone" type="text"/>
             <textarea required placeholder="Укажите кол-во человек и желаемую дату" name="description"></textarea>
@@ -215,7 +218,7 @@
     <div class="formTemplate cw form" onclick="event.stopPropagation()">
         <h2 class="title">Оставьте свои контактные данные и мы перезвоним</h2>
         <div class="closeButton" onclick="$('#Zayavka').fadeOut(200)"></div>
-        <form method="POST" class="post-form ">{% csrf_token %}
+        <form method="POST" action="/checkRequest" class="post-form ">{% csrf_token %}
             <input required placeholder="Имя" name="name" type="text"/>
             <input required placeholder="Телефон" name="cellphone" type="text"/>
             <input required placeholder="E-mail" name="mail" type="email"/>

@@ -5,11 +5,8 @@ from django.shortcuts import render
 
 from .models import *
 
-# mailAddress="strannikcrn@yandex.ru"
-mailAddressFrom = "site@rusmaster48.ru"
-mailAddress = "zakaz@rusmaster48.ru"
-# mailAddress="nuclear_crew@mail.ru"
-# mailAddress="plotnikov@gorstroy36.ru"
+mailAddressFrom = "robot@blackraven.pro"
+mailAddress = "kalachkrai@gmail.com " #mailAddress="nuclear_crew@mail.ru"
 defaultNone = "Отсутствует"
 
 
