@@ -25,7 +25,7 @@ SECRET_KEY = '-slhv50=+7(tt@+p4zag9($dtgxom8)q9k%*c(u(_a87$^3q-%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kalachkrai.ru','127.0.0.1']
+ALLOWED_HOSTS = ['kalachkrai.ru','www.kalachkrai.ru','127.0.0.1']
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.mail.ru"
 EMAIL_HOST_USER = 'robot@blackraven.pro'
