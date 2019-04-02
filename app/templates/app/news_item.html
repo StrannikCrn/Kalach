@@ -1,4 +1,4 @@
-{% extends 'app/mainTemplate.html' %}
+﻿{% extends 'app/mainTemplate.html' %}
 {% load staticfiles %}
 
 {% block head %}
@@ -33,7 +33,7 @@
 
         <div class="gallery_wrap">
             {% if res_news.gallery_photos.all|length > 0 %}
-                <div class="fotorama" data-allowfullscreen="true" data-nav="thumbs">
+                <div class="fotorama" data-maxheight="400" data-allowfullscreen="true" data-nav="thumbs">
                     {% for photo in res_news.gallery_photos.all %}
                         <img data-caption="{{ photo.caption }}" src="{{ photo.image.url }}">
                     {% endfor %}
